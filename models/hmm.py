@@ -30,7 +30,7 @@ class HMM(object):
 
         assert len(tag_lists) == len(word_lists)
 
-        # 估计转移概率矩阵
+        # 估计隐状态转移概率矩阵
         for tag_list in tag_lists:
             seq_len = len(tag_list)
             for i in range(seq_len - 1):

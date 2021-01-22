@@ -12,9 +12,13 @@ def main():
     print("读取数据...")
     train_word_lists, train_tag_lists, word2id, tag2id = \
         build_corpus("train")
+    print("train_word_lists:", train_word_lists[:10])
+    print("train_tag_lists:", train_tag_lists[:10])
+    #print("word2id:", word2id)
+    print("tag2id:", tag2id)
     dev_word_lists, dev_tag_lists = build_corpus("dev", make_vocab=False)
     test_word_lists, test_tag_lists = build_corpus("test", make_vocab=False)
-    """
+    
     # 训练评估ｈｍｍ模型
     print("正在训练评估HMM模型...")
     hmm_pred = hmm_train_eval(
@@ -30,7 +34,7 @@ def main():
         (train_word_lists, train_tag_lists),
         (test_word_lists, test_tag_lists)
     )
-    """
+    
     # 训练评估BI-LSTM模型
     print("正在训练评估双向LSTM模型...")
     # LSTM模型训练的时候需要在word2id和tag2id加入PAD和UNK
